@@ -1,6 +1,6 @@
 {
   "name": "otf2ttf",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Convert OpenType font to TryeType",
   "homepage": "https://github.com/shimarulin/otf2ttf",
   "keywords": ["font", "otf2ttf", "otf", "ttf", "OpenType", "TryeType"],
