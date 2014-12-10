@@ -54,14 +54,21 @@ if (process.argv[1] === '/usr/bin/otf2ttf') {
     });
 }
 
-function otf2ttf() {
+function otf2ttf(opts) {
     var fontInfo, fontFile;
+    if (opts == undefined) {
+        opts = {
+            debug: false
+        }
+    }
     return through.obj(function(file, enc, cb) {
         async.series([
                 function(callback){
                     exec('fontforge -script "'+__dirname+'/otf2ttf.sh" "'+file.path+'" "'+os.tmpdir()+'"',
                         function (error, stdout, stderr) {
-//                            console.log('stderr: ' + stderr);
+                            if (opts.debug === true) {
+                                console.log('stderr: ' + stderr);
+                            }
                             if (error === null) {
                                 fontInfo = JSON.parse(stdout);
                                 callback(null, fontInfo);
@@ -72,13 +79,16 @@ function otf2ttf() {
                         });
                 }],
             function(err, results){
-                console.log('Font info: \n'.green.bold, results[0]);
+                if (opts.debug === true) {
+                    console.log('Font info: \n'.green.bold, results[0]);
+                }
                 fontFile = new File({
                     cwd: "/",
                     base: os.tmpdir()+"/",
                     path: os.tmpdir()+"/"+fontInfo.fontFile,
                     contents: fs.readFileSync(os.tmpdir()+"/"+fontInfo.fontFile)
                 });
+                fontFile.data = fontInfo;
                 this.push(fontFile);
                 return cb();
             }.bind(this));
