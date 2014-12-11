@@ -12,8 +12,7 @@
     "TryeType"
   ],
   "license": "MIT",
-  "private": false,
-  "main": "otf2ttf.js",
+  "main": "index.js",
   "author": {
     "name": "Vyacheslav Shimarulin",
     "email": "shimarulin@gmail.com"
@@ -34,6 +33,6 @@
     "vinyl": "^0.4.6"
   },
   "bin": {
-    "otf2ttf": "otf2ttf.js"
+    "otf2ttf": "cli.js"
   }
 }
