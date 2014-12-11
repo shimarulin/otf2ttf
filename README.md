@@ -18,8 +18,8 @@ Install the module as CLI tool
 If you are using `otf2ttf` programatically you should install it as project dependency: 
 ```bash
   $ cd /path/to/your/project
-  $ npm install [--save||--save-dev] otf2ttf`
-``
+  $ npm install [--save||--save-dev] otf2ttf
+```
 
 ## Usage
 
