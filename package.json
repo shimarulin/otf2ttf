@@ -1,9 +1,16 @@
 {
   "name": "otf2ttf",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Convert OpenType font to TryeType",
   "homepage": "https://github.com/shimarulin/otf2ttf",
-  "keywords": ["font", "otf2ttf", "otf", "ttf", "OpenType", "TryeType"],
+  "keywords": [
+    "font",
+    "otf2ttf",
+    "otf",
+    "ttf",
+    "OpenType",
+    "TryeType"
+  ],
   "license": "MIT",
   "private": false,
   "main": "otf2ttf.js",
@@ -27,6 +34,6 @@
     "vinyl": "^0.4.6"
   },
   "bin": {
-    "otf2ttf" : "otf2ttf.js"
+    "otf2ttf": "otf2ttf.js"
   }
 }
